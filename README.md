@@ -57,10 +57,10 @@
 ## To-Do List
 
 ### Step 1: Web Crawling
-- [ ] Set up scrapy project
-- [ ] Define crawling rule
-- [ ] Extract content
-- [ ] Save HTML files
+- [X] Set up scrapy project
+- [X] Define crawling rule
+- [X] Extract content
+- [X] Save HTML files
 
 ### Step 2: Indexing
 - [ ] Load and clean HTML
