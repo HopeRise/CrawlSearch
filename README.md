@@ -64,8 +64,8 @@
 
 ### Step 2: Indexing
 - [X] Load and clean HTML
-- [ ] Vectorize document
-- [ ] Compute similarity
+- [X] Vectorize document
+- [X] Compute similarity
 
 ### Step 3: Query Processing
 - [ ] Set up Flask
