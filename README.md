@@ -63,7 +63,7 @@
 - [X] Save HTML files
 
 ### Step 2: Indexing
-- [ ] Load and clean HTML
+- [X] Load and clean HTML
 - [ ] Vectorize document
 - [ ] Compute similarity
 
