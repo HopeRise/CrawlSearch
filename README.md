@@ -35,7 +35,7 @@ The system use the power of scrapy for web crawling, Skit-Learn for TF-IDF index
 ## Design
 The system's capabilities includes downloaading web documents, constucting an inverted index, and processing user queries. it involves the Scrapy crawler to collect web documents, th indexer building the TF-IDF matrix, and the Flask processor handeling user queries. Integration is achieved through data exchange between components and adherence to defined interfaces.
 
-![Web Search Engine Diagram](/Assets/Web_Search_Engine_Diagram.png)
+![Web Search Engine Diagram](/spiders/Assets/Web_Search_Engine_Diagram.png)
 
 This activity diagram outlines the flow of activities within the system, including crawling, indexing, processing queries, and returning results. Each 
 component interacts with the others to achieve the overall functionality of the system.
@@ -44,7 +44,7 @@ component interacts with the others to achieve the overall functionality of the 
 
 The architecture of the system involves three main components: the Scrapy crawler, the inverted indexer, and the Flask query processor. These components interact with each other to enable web document crawling, indexing, and query processing.
 
-![Web Search Engine Diagram](/Assets/Architecture_Diagram.png)
+![Web Search Engine Diagram](/spiders/Assets/Architecture_Diagram.png)
 
 This diagram illustrates the interaction between the components and how they utilize interfaces such as file I/O and HTTP endpoints for communication and data exchange. The implementation relies on external libraries such as Scikit-Learn, BeutifulSoup, Spider, and Flask to enable various functionality.
 
