@@ -16,10 +16,12 @@ The project focus on web document retrieval and query processing. It consists
 of three compononent: a web crawler, an indexer, and a query procesor. These
 components works together to enable efficiant crawling, indexing, and 
 querying of web docuemnts. 
+
 ### Soultion Outline
 1. **Web Crawler**: Use Scrapy to roam the web and download web documents.
 2. **Indexer**: Build an inverted index using the TF-IDF and Cosine similarities to search and retrieve 
 3. **Query Processor**: Accepts user queries and returns ranked document results using TF-IDF and cosine similarity.
+
 ### Relevant Literature: 
 - [Scrapy Documentation](https://docs.scrapy.org/en/latest/intro/tutorial.html):  
   This official tutorial provides a comprehensive introduction to Scrapy, a powerful Python framework for web crawling and scraping. It covers spider creation, data extraction, and best practices for scalable web data collection, which directly informs the design of the project's web crawler component.
@@ -35,7 +37,7 @@ The system use the power of scrapy for web crawling, Skit-Learn for TF-IDF index
 ## Design
 The system's capabilities includes downloaading web documents, constucting an inverted index, and processing user queries. it involves the Scrapy crawler to collect web documents, th indexer building the TF-IDF matrix, and the Flask processor handeling user queries. Integration is achieved through data exchange between components and adherence to defined interfaces.
 
-![Web Search Engine Diagram](/spiders/Assets/Web_Search_Engine_Diagram.png)
+![Web Search Engine Diagram](spiders/Assets/Web_Search_Engine_Diagram.png)
 
 This activity diagram outlines the flow of activities within the system, including crawling, indexing, processing queries, and returning results. Each 
 component interacts with the others to achieve the overall functionality of the system.
@@ -44,11 +46,11 @@ component interacts with the others to achieve the overall functionality of the 
 
 The architecture of the system involves three main components: the Scrapy crawler, the inverted indexer, and the Flask query processor. These components interact with each other to enable web document crawling, indexing, and query processing.
 
-![Web Search Engine Diagram](/spiders/Assets/Architecture_Diagram.png)
+![Architecture Diagram](spiders/Assets/Architecture_Diagram.png)
 
 This diagram illustrates the interaction between the components and how they utilize interfaces such as file I/O and HTTP endpoints for communication and data exchange. The implementation relies on external libraries such as Scikit-Learn, BeutifulSoup, Spider, and Flask to enable various functionality.
 
-## 5. Operation
+## Operation
 
 **Installation Instructions:**  
   - Ensure Python 3.8 or higher is installed.  
@@ -73,7 +75,8 @@ This diagram illustrates the interaction between the components and how they uti
   - **Cleaned text files:** Stored in the `cleaned_text/` directory.  
   - **Inverted index:** Saved as `index.json`.  
   - **Search results:** Ranked results provided as a downloadable CSV file via the Flask API.
-## 6. Conclusion
+
+## Conclusion
 - **Success/Failure:**  
   The project successfully demonstrates the implementation of a modular web search pipeline, encompassing web crawling, document cleaning, inverted indexing, and query processing. The system is capable of acquiring web documents, extracting and cleaning their content, constructing a positional inverted index, and retrieving relevant documents in response to user queries using TF-IDF and cosine similarity. Error handling is incorporated to manage missing files or invalid queries, ensuring robust operation.
 
@@ -85,14 +88,14 @@ This diagram illustrates the interaction between the components and how they uti
   - Search results for user queries are provided as ranked CSV files, which can be downloaded via the Flask API.  
   - Example outputs, including ranked document results and similarity scores for sample queries, are displayed below as evidence of successful retrieval and ranking.
 
-## 7. Data Sources
+## Data Sources
 - Web documents are sourced from [quotes.toscrape.com](https://quotes.toscrape.com)
 - Additional data sources can be integrated as needed for testing and evaluation.
 
-## 8. Test Cases
+## Test Cases
 Test cases involve validating the functionality of the crawler, indexer, and query processor. Frameworks such as Scrapy's testing tools and unit testing libraries for Python can be utilized. Test coverage includes scenarios for crawling, indexing, and querying.
-## 9. Source Code
 
+## Source Code
 The complete source code for this project, including the web crawler, indexer, and query processor, is provided in the accompanying Jupyter notebook (`Crawl_Search.ipynb`) and related Python scripts within the project directory. All implementation details, code cells, and configuration files are included to enable full reproducibility of the results.
 
 Key files and directories:
@@ -105,19 +108,17 @@ Key files and directories:
 To access or modify the source code, open the notebook or scripts in your preferred Python environment (e.g., Jupyter Notebook or Visual Studio Code).
 
 
-## 10. Bibliography
+## Bibliography
 
-- https://docs.scrapy.org/en/latest/intro/tutorial.html  
-  *Official Scrapy tutorial providing step-by-step guidance on building web crawlers, extracting data, and managing large-scale scraping projects.*
+[1] Scrapy, “Scrapy Tutorial — Scrapy 2.3.0 documentation,” 2012. [Online]. Available: https://docs.scrapy.org/en/latest/intro/tutorial.html
 
-- https://beautiful-soup-4.readthedocs.io/en/latest  
-  *Comprehensive documentation for Beautiful Soup, a Python library used for parsing HTML and XML documents and extracting useful information.*
+[2] L. Richardson, “Beautiful Soup Documentation — Beautiful Soup 4.4.0 Documentation,” 2015. [Online]. Available: https://beautiful-soup-4.readthedocs.io/en/latest
 
-- https://www.w3schools.com/python/python_json.asp  
-  *Introductory guide to working with JSON data in Python, including reading, writing, and parsing JSON files.*
+[3] W3Schools, “Python JSON,” 2025. [Online]. Available: https://www.w3schools.com/python/python_json.asp
 
-- https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html  
-  *Reference documentation for the cosine similarity function in scikit-learn, used to measure similarity between vectors, such as document and query vectors.*
+[4] Scikit-learn, “sklearn.metrics.pairwise.cosine_similarity,” 2018. [Online]. Available: https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html
 
-- https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html  
-  *Documentation for the TfidfVectorizer class in scikit-learn, which converts text documents to a matrix of TF-IDF features for information retrieval and text mining.*
+[5] Scikit-learn, “TfidfVectorizer,” 2018. [Online]. Available: https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
+
+[6] Flask, “Welcome to Flask — Flask Documentation (3.1.x),” 2025. [Online]. Available: https://flask.palletsprojects.com/en/stable
+
