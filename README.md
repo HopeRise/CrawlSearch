@@ -1,4 +1,5 @@
 ## Abstract
+
 This project focuses on designing and implementing a web-based search pipeline, including document 
 acquisition, indexing, and query retrieval. A Scrapy-powered crawler is used to download and store web documents in 
 HTML format. An inverted index is then generated using TF-IDF weighting to support efficient similarity-based 
@@ -12,17 +13,17 @@ similarity. Additionally, a front-end search interface and production deployment
 user-accessible and robust.
 
 ## Overview
-The project focus on web document retrieval and query processing. It consists
-of three compononent: a web crawler, an indexer, and a query procesor. These
-components works together to enable efficiant crawling, indexing, and 
-querying of web docuemnts. 
 
-### Soultion Outline
-1. **Web Crawler**: Use Scrapy to roam the web and download web documents.
-2. **Indexer**: Build an inverted index using the TF-IDF and Cosine similarities to search and retrieve 
+This project centers on web document retrieval and query processing. It is built around three key components:  web crawler, an indexer, and a query processor. Together, these components enable efficient crawling, indexing, and searching of web documents.
+
+### Solution Outline
+
+1. **Web Crawler**: Uses Scrapy to crawl the web and download web documents.
+2. **Indexer**: Builds an inverted index using TF-IDF and cosine similarity to support search and retrieval.
 3. **Query Processor**: Accepts user queries and returns ranked document results using TF-IDF and cosine similarity.
 
 ### Relevant Literature: 
+
 - [Scrapy Documentation](https://docs.scrapy.org/en/latest/intro/tutorial.html):  
   This official tutorial provides a comprehensive introduction to Scrapy, a powerful Python framework for web crawling and scraping. It covers spider creation, data extraction, and best practices for scalable web data collection, which directly informs the design of the project's web crawler component.
 
@@ -32,23 +33,24 @@ querying of web docuemnts.
 For the search indexing section, I have already studied and applied established techniques, as demonstrated in this project.
 
 ### Proposed System
-The system use the power of scrapy for web crawling, Skit-Learn for TF-IDF indexing and Cosine similarities, and Flask for query processing. The combination of these technologies, it delivers a solution for web docuement retrieval and query processing. 
+
+The system uses the power of Scrapy for web crawling, Scikit-Learn for TF-IDF indexing and cosine similarity, and Flask for query processing. The combination of these technologies delivers a solution for web document retrieval and query processing.
 
 ## Design
-The system's capabilities includes downloaading web documents, constucting an inverted index, and processing user queries. it involves the Scrapy crawler to collect web documents, th indexer building the TF-IDF matrix, and the Flask processor handeling user queries. Integration is achieved through data exchange between components and adherence to defined interfaces.
+
+Processing user queries involves three integrated components: the Scrapy crawler, which collects web documents; the indexer, which constructs the TF-IDF matrix; and the Flask-based processor, which handles incoming queries. These components interact through structured data exchange and well-defined interfaces to ensure smooth integration across the system.
 
 ![Web Search Engine Diagram](spiders/Assets/Web_Search_Engine_Diagram.png)
 
-This activity diagram outlines the flow of activities within the system, including crawling, indexing, processing queries, and returning results. Each 
-component interacts with the others to achieve the overall functionality of the system.
+This activity diagram illustrates the sequence of operations within the system, including crawling, indexing, query processing, and delivering results. Each component works together to support the system’s overall functionality.
 
 ## Architecture
 
-The architecture of the system involves three main components: the Scrapy crawler, the inverted indexer, and the Flask query processor. These components interact with each other to enable web document crawling, indexing, and query processing.
+The system’s architecture is composed of three core components: the Scrapy crawler, the inverted index generator, and the Flask-based query processor. Together, these components facilitate web document crawling, indexing, and query handling.
 
 ![Architecture Diagram](spiders/Assets/Architecture_Diagram.png)
 
-This diagram illustrates the interaction between the components and how they utilize interfaces such as file I/O and HTTP endpoints for communication and data exchange. The implementation relies on external libraries such as Scikit-Learn, BeutifulSoup, Spider, and Flask to enable various functionality.
+This diagram shows how the system’s components interact and communicate using interfaces such as file I/O and HTTP endpoints. The implementation leverages external libraries, including Scikit-Learn, BeautifulSoup, Scrapy, and Flask to provide the necessary functionality for crawling, parsing, indexing, and query processing.
 
 ## Operation
 
@@ -77,8 +79,9 @@ This diagram illustrates the interaction between the components and how they uti
   - **Search results:** Ranked results provided as a downloadable CSV file via the Flask API.
 
 ## Conclusion
+
 - **Success/Failure:**  
-  The project successfully demonstrates the implementation of a modular web search pipeline, encompassing web crawling, document cleaning, inverted indexing, and query processing. The system is capable of acquiring web documents, extracting and cleaning their content, constructing a positional inverted index, and retrieving relevant documents in response to user queries using TF-IDF and cosine similarity. Error handling is incorporated to manage missing files or invalid queries, ensuring robust operation.
+  The project successfully demonstrates the implementation of a modular web search pipeline, encompassing web crawling, document cleaning, inverted indexing, and query processing. The system is capable of acquiring web documents, extracting and cleaning their content, constructing a positional inverted index, and retrieving relevant documents in response to user queries using TF-IDF and cosine similarity. Error handling is incorporated to manage missing files or invalid queries, ensuring robust operation. Potential concerns include network interruptions, website changes, or anti-crawling measures that can disrupt document acquisition, as well as data quality issues or missing files that may affect indexing and search accuracy. Additionally, dependency mismatches, insufficient error handling, or scalability limitations could cause failures in processing or serving queries.
 
 - **Outputs:**  
   The outputs of the system are as follows:  
@@ -89,13 +92,16 @@ This diagram illustrates the interaction between the components and how they uti
   - Example outputs, including ranked document results and similarity scores for sample queries, are displayed below as evidence of successful retrieval and ranking.
 
 ## Data Sources
+
 - Web documents are sourced from [quotes.toscrape.com](https://quotes.toscrape.com)
 - Additional data sources can be integrated as needed for testing and evaluation.
 
 ## Test Cases
-Test cases involve validating the functionality of the crawler, indexer, and query processor. Frameworks such as Scrapy's testing tools and unit testing libraries for Python can be utilized. Test coverage includes scenarios for crawling, indexing, and querying.
+
+Test cases focus on verifying the functionality of the crawler, indexer, and query processor. Tools such as Scrapy’s built-in testing utilities and Python’s unit testing frameworks can be used to support this process. Test coverage includes scenarios related to crawling behavior, index generation, and query handling.
 
 ## Source Code
+
 The complete source code for this project, including the web crawler, indexer, and query processor, is provided in the accompanying Jupyter notebook (`Crawl_Search.ipynb`) and related Python scripts within the project directory. All implementation details, code cells, and configuration files are included to enable full reproducibility of the results.
 
 Key files and directories:

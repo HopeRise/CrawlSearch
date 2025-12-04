@@ -1,0 +1,5 @@
+((*- extends 'article.tplx' -*))
+
+((* block header *))
+\setcounter{secnumdepth}{0}  % Disable all section numbering
+((* endblock header *))
