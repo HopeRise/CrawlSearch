@@ -1,16 +1,9 @@
 ## Abstract
 
 This project focuses on designing and implementing a web-based search pipeline, including document 
-acquisition, indexing, and query retrieval. A Scrapy-powered crawler is used to download and store web documents in 
-HTML format. An inverted index is then generated using TF-IDF weighting to support efficient similarity-based 
-retrieval. Finally, a Flask-driven query processor enables users to submit free-text searches and receive ranked 
-document results based on cosine similarity.
+acquisition, indexing, and query retrieval. A Scrapy-powered crawler is used to download and store web documents in HTML format. From the HTML, I converted to TXT to generate an inverted index, calculated the TF-IDF weighting to support efficient similarity-based retrieval. Finally, a Flask-driven query processor enables users to submit free-text searches and receive ranked document results based on cosine similarity.
 
-Future enhancements can focus on improving scalability and retrieval quality. Optional features such as concurrent 
-and distributed crawling using AutoThrottle and Scrapyd would allow faster and broader document collection. Search 
-accuracy could be increased by integrating semantic vector embeddings like Word2Vec or FAISS-based k-nearest neighbor 
-similarity. Additionally, a front-end search interface and production deployment would make the system more 
-user-accessible and robust.
+Future enhancements can focus on improving scalability and retrieval quality. Optional features such as concurrent and distributed crawling using AutoThrottle and Scrapyd would allow faster and broader document collection. Search accuracy could be increased by integrating semantic vector embeddings like Word2Vec or FAISS-based k-nearest neighbor similarity. Additionally, a front-end search interface and production deployment would make the system more user-accessible and robust.
 
 ## Overview
 
@@ -34,7 +27,7 @@ For the search indexing section, I have already studied and applied established 
 
 ### Proposed System
 
-The system uses the power of Scrapy for web crawling, Scikit-Learn for TF-IDF indexing and cosine similarity, and Flask for query processing. The combination of these technologies delivers a solution for web document retrieval and query processing.
+The system uses the power of Scrapy for web crawling, Scikit-Learn for calculating TF-IDF weights and cosine similarity, then Flask for query processing. The combination of these technologies delivers a solution for web document retrieval and query processing.
 
 ## Design
 
@@ -50,7 +43,7 @@ The system’s architecture is composed of three core components: the Scrapy cra
 
 ![Architecture Diagram](spiders/Assets/Architecture_Diagram.png)
 
-This diagram shows how the system’s components interact and communicate using interfaces such as file I/O and HTTP endpoints. The implementation leverages external libraries, including Scikit-Learn, BeautifulSoup, Scrapy, and Flask to provide the necessary functionality for crawling, parsing, indexing, and query processing.
+This diagram shows how the system’s components interact and communicate. The system begin web scraping to retrieve HTML file, then convert the HTML files into TXT files. After the conversion, I generate the inverted index of the files. Once the inverted index has been created, the flask will then calculate the TF-IDF and cosine similularity based of the queries.csv file. Finally the system will output another CSV file named results of the ranking of each query based on the calculating the flask has made. The implementation leverages external libraries, including Scikit-Learn, BeautifulSoup, Scrapy, and Flask to provide the necessary functionality for crawling, parsing, indexing, and query processing.
 
 ## Operation
 
@@ -81,7 +74,7 @@ This diagram shows how the system’s components interact and communicate using 
 ## Conclusion
 
 - **Success/Failure:**  
-  The project successfully demonstrates the implementation of a modular web search pipeline, encompassing web crawling, document cleaning, inverted indexing, and query processing. The system is capable of acquiring web documents, extracting and cleaning their content, constructing a positional inverted index, and retrieving relevant documents in response to user queries using TF-IDF and cosine similarity. Error handling is incorporated to manage missing files or invalid queries, ensuring robust operation. Potential concerns include network interruptions, website changes, or anti-crawling measures that can disrupt document acquisition, as well as data quality issues or missing files that may affect indexing and search accuracy. Additionally, dependency mismatches, insufficient error handling, or scalability limitations could cause failures in processing or serving queries.
+  The project successfully demonstrates the implementation of a modular web search pipeline, encompassing web crawling, document cleaning, inverted indexing, and query processing. The system is capable of acquiring web documents, extracting and cleaning their content, constructing a positional inverted index, and retrieving relevant documents in response to user queries using TF-IDF and cosine similarity. Potential concerns include network interruptions, website changes, or anti-crawling measures that can disrupt document acquisition, as well as data quality issues or missing files that may affect indexing and search accuracy. Additionally, dependency mismatches, insufficient error handling, or scalability limitations could cause failures in processing or serving queries.
 
 - **Outputs:**  
   The outputs of the system are as follows:  
@@ -110,9 +103,6 @@ Key files and directories:
 - `cleaned_text/`: Directory containing cleaned text files extracted from HTML pages.
 - `index.json`: Generated inverted index used for search and retrieval.
 - `requirements.txt`: List of required Python packages for the project.
-
-To access or modify the source code, open the notebook or scripts in your preferred Python environment (e.g., Jupyter Notebook or Visual Studio Code).
-
 
 ## Bibliography
 
